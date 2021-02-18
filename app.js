@@ -1,6 +1,6 @@
 const http = require('http');
 const fs = require('fs');
-
+//Пустой коммент для пул реквеста
 const server = http.createServer((request, response) => {
 	if(request.url.indexOf('svg') != -1) {
 		response.writeHead(200, {
