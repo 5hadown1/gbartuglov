@@ -1,0 +1,20 @@
+{
+  "name": "webserver",
+  "version": "1.0.0",
+  "description": "Webserver v 1.0.0",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node app.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/5hadown1/gbartuglov.git"
+  },
+  "author": "Artem Uglov",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/5hadown1/gbartuglov/issues"
+  },
+  "homepage": "https://github.com/5hadown1/gbartuglov#readme"
+}
