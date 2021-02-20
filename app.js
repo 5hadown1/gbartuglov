@@ -8,9 +8,11 @@ const server = http.createServer((request, response) => {
 		});
 	}
 	let body = null;
-	body = request.url === '/'
-		? body = fs.readFileSync('./public_html/index.html')
-		: body = fs.readFileSync('./public_html' + request.url);
+	try {
+		body = fs.readFileSync(`./public_html${request.url}`);
+	} catch(error) {
+		body = fs.readFileSync('./public_html/index.html');
+	}
 	response.end(body);
 });
 
