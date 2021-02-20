@@ -1,6 +1,6 @@
 const http = require('http');
 const fs = require('fs');
-//Пустой коммент для пул реквеста
+
 const server = http.createServer((request, response) => {
 	if(request.url.indexOf('svg') != -1) {
 		response.writeHead(200, {
@@ -8,9 +8,11 @@ const server = http.createServer((request, response) => {
 		});
 	}
 	let body = null;
-	body = request.url === '/'
-		? body = fs.readFileSync('./public_html/index.html')
-		: body = fs.readFileSync('./public_html' + request.url);
+	try {
+		body = fs.readFileSync(`./public_html${request.url}`);
+	} catch(error) {
+		body = fs.readFileSync('./public_html/index.html');
+	}
 	response.end(body);
 });
 
